@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Luxury Interactive Christmas Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body, html, #root {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #050505; /* Deep dark background */
+        overflow: hidden;
+      }
+      /* Fallback overlay styles */
+      #setup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .instruction-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 40px;
+        border-radius: 12px;
+        margin-top: 20px;
+        backdrop-filter: blur(10px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "postprocessing": "https://aistudiocdn.com/postprocessing@^6.38.0",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+    "@react-three/postprocessing": "https://aistudiocdn.com/@react-three/postprocessing@^3.0.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- This overlay is visible by default and removed by React if the app loads successfully -->
+    <div id="setup-overlay">
+      <h1 class="text-3xl font-bold text-red-500 mb-4">Setup Required</h1>
+      <p class="text-gray-300 max-w-lg mb-4">
+        This application uses 3D graphics and ES Modules, which browsers block when opening files directly (file://) for security reasons.
+      </p>
+      <div class="instruction-box">
+        <p class="text-sm text-gray-400 uppercase tracking-widest mb-2">How to run</p>
+        <p class="text-white mb-2">Please use a local development server.</p>
+        <code class="bg-black/50 px-4 py-2 rounded text-green-400 font-mono text-sm block">
+          npx vite
+        </code>
+      </div>
+    </div>
+
+    <!-- Entry Point -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
