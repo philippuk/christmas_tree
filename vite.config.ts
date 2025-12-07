@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Ensures relative paths for assets, making it easier to deploy on subdirectories
+  // 'base' must be './' for GitHub Pages to load assets correctly from a subdirectory
+  base: './', 
   build: {
     outDir: 'dist',
     sourcemap: false
